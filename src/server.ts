@@ -4,7 +4,12 @@ import { z } from 'zod'
 import cors from '@fastify/cors'
 
 const app = fastify()
-await app.register(cors)
+
+async function init() {
+  return await app.register(cors)
+}
+
+init()
 
 const prisma = new PrismaClient()
 
